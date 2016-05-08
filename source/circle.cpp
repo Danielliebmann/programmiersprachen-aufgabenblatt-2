@@ -37,12 +37,12 @@ float Circle::get_color_g() const{//G
 float Circle::get_color_b() const{//B
  return clr.b;
 }
-
+*/ 
 //2.9 Umfang
 float Circle::get_circumference() const{
  return 2 * M_PI * radius; //2*pi = Umfang
 }
-*/
+
 /*
 void Circle::draw(Window const& win){
  win.draw_point(get_center().x, get_center().y, get_color_r(), get_color_g(), get_color_b());

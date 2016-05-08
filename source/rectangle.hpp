@@ -18,10 +18,10 @@ public:
 	float set_width(float new_width);
 	//VEKTOR get Eckpunkt
 	Vec2 get_edge() const;
-/*
+
         //2.9 UMFANG "Circumference"
 	float get_circumference() const;
-	
+	/*
 	//2.10 RGB FARBEN
 	float get_color_r() const;
 	float get_color_g() const;
