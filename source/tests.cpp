@@ -2,6 +2,7 @@
 #include <catch.hpp>
 #include "vec2.hpp"
 #include "mat2.hpp"
+#include <cmath>
 
 TEST_CASE("teste vec2", "[vec2]")
 {
@@ -195,7 +196,7 @@ TEST_CASE("teste vec2", "[vec2]")
 }
 
 TEST_CASE("teste Mat2", "[mat2]")
-{
+{//Fall 1
 	SECTION("matrixdefault"){//Matrixdefaultconfig -> EInheitsmatrix
 		Mat2 m;
 		REQUIRE(m.matrix[0][0] == 1);
@@ -206,19 +207,20 @@ TEST_CASE("teste Mat2", "[mat2]")
 	}
 	
 	SECTION("matrixuser"){ //Matrixuserconfig
+	//Fall 1
 		Mat2 m{1,2,3,4};
 		REQUIRE(m.matrix[0][0] == 1);
 		REQUIRE(m.matrix[0][1] == 2);
 		REQUIRE(m.matrix[1][0] == 3);
 		REQUIRE(m.matrix[1][1] == 4);
-
+	//Fall 2
 		m = Mat2{5,6,7,8};
 		REQUIRE(m.matrix[0][0] == 5);
 		REQUIRE(m.matrix[0][1] == 6);
 		REQUIRE(m.matrix[1][0] == 7);
 		REQUIRE(m.matrix[1][1] == 8);
 	}
-	SECTION("matrixmult"){
+	SECTION("matrixmult"){//Fall 1
 		Mat2 m{10,15,20, 25};
 		Mat2 correctResult{50, 75, 110, 155};
 		m *= Mat2{1,2,3,4};
@@ -227,7 +229,7 @@ TEST_CASE("teste Mat2", "[mat2]")
 
 	}
 	SECTION("matrixmulttest") //Matrixmultiplikation TEST 
-	{
+	{//Fall 1
 		Mat2 m0{6, 5, 4, 2};
 		Mat2 m1{2, 5, 1, 3};
 		Mat2 correctResult{17,45,10,26};
@@ -236,6 +238,81 @@ TEST_CASE("teste Mat2", "[mat2]")
 		REQUIRE(mRes.equal(correctResult) == true);
 
 	}
+
+	SECTION("Matrix mal Vektor")
+	{//Fall 1
+		Mat2 m = Mat2{6,1,1,4};
+		Vec2 vRes = (m * Vec2{2,2});
+
+		REQUIRE(vRes.x == 14);
+		REQUIRE(vRes.y == 10);
+		//Fall 2
+		m = Mat2{7,1,3,4};
+		vRes = (m * Vec2{3,2});
+
+		REQUIRE(vRes.x == 23);
+		REQUIRE(vRes.y == 17);
+	}
+
+	SECTION("Vektor mal Matrix")
+	{//Fall 1
+		Mat2 m = Mat2{3,8,2,1};
+		Vec2 vRes = (Vec2{2,3} * m);
+
+		REQUIRE(vRes.x == 30);
+		REQUIRE(vRes.y == 7);
+	//Fall 2
+		m = Mat2{6,2,4,14};
+		vRes = (Vec2{1,1} * m);
+
+		REQUIRE(vRes.x == 8);
+		REQUIRE(vRes.y == 18);
+	}
+
+	SECTION("Determinante")
+	{//Fall 1
+		Mat2 m{1,2,3,4};
+		REQUIRE(m.det() == -2);
+	 //Fall 2
+		m = Mat2{6,3,5,8};
+		REQUIRE(m.det() == 33);
+	 //Fall 3
+		m = Mat2{9,4,3,1};
+		REQUIRE(m.det() == -3);
+	}
+
+	SECTION("Inverse-Test")
+	{//Fall 1
+		Mat2 inv = inverse(Mat2{5,4,3,2});
+		Mat2 correctResult{-1,2,1.5,-2.5};
+		REQUIRE(inv.equal(correctResult) == true);
+	//Fall 2
+		inv = inverse(Mat2{8,4,2,0});
+		correctResult = Mat2{0,0.5,0.25,-1};
+		REQUIRE(inv.equal(correctResult) == true);
+
+	}
+
+	SECTION("Transponierte-Test")
+	{//Fall 1
+		Mat2 m = transpose(Mat2{0,5,2,1});
+		Mat2 correctResult{0,2,5,1};
+		REQUIRE(m.equal(correctResult) == true);
+	//Fall 2
+		m = transpose(Mat2{5,-8,7,-6});
+		correctResult = Mat2{5,7,-8,-6};
+		REQUIRE(m.equal(correctResult) == true);
+	}
+
+	SECTION("Rotationsmatrix-Test"){
+	//Fall 1
+		Mat2 m = make_rotation_mat2(1.5708); // = Pi durch 2 = 90 Grad*(Pi durch 180)
+		REQUIRE(m.matrix[0][0] == Approx(1.0));
+		REQUIRE(m.matrix[0][1] == Approx(-0.0));
+		REQUIRE(m.matrix[1][0] == Approx(-1.0));
+		REQUIRE(m.matrix[1][1] == Approx(0));
+	}
+
 }
 
 
