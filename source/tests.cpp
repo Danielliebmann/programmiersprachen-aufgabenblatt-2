@@ -1,8 +1,14 @@
+
 #define CATCH_CONFIG_RUNNER
 #include <catch.hpp>
+#include <math.h>
 #include "vec2.hpp"
 #include "mat2.hpp"
-#include <cmath>
+#include "color.hpp"
+#include "circle.hpp"
+#include "rectangle.hpp"
+#include "window.hpp"
+
 
 TEST_CASE("teste vec2", "[vec2]")
 {
@@ -312,11 +318,88 @@ TEST_CASE("teste Mat2", "[mat2]")
 		REQUIRE(m.matrix[1][0] == Approx(-1.0));
 		REQUIRE(m.matrix[1][1] == Approx(0));
 	}
-
+	
+}/*
+//2.8
+TEST_CASE("Circle Testfaelle", "[circle]"){
+	//User-COnfiguration
+	Circle a{};
+	REQUIRE(a.ctr.x == Approx(0));
+	REQUIRE(a.ctr.y == Approx(0));
+	REQUIRE(a.radius == Approx(1));
+	//RGB-Farben
+	REQUIRE(a.clr.r == Approx(0));
+	REQUIRE(a.clr.g == Approx(0));
+	REQUIRE(a.clr.b == Approx(0));
+	//Mit Werten
+	Circle c{{5.0, 4.0}, 1.0, {0.5, 0.4, 0.3}};
+	REQUIRE(c.ctr.x == Approx(5.0));
+	REQUIRE(c.ctr.y == Approx(4.0));
+	REQUIRE(c.radius == Approx(1.0));
+	//RGB-Farben
+	REQUIRE(c.clr.r == Approx(0.5));
+	REQUIRE(c.clr.g == Approx(0.4));
+	REQUIRE(c.clr.b == Approx(0.3));
 }
 
+TEST_CASE("Circle Get Test", "[CircG]"){
+	//Fall 1
+	Circle a{{6.0, 7.0}, 2.0, {0.3, 0.4, 0}};
+	REQUIRE(a.get_diameter() == Approx(4.0));
+	REQUIRE(a.get_area() == Approx(2 * 2 * M_PI));
+	REQUIRE(a.get_circumference() == Approx(2 * M_PI * 2));
+	REQUIRE(a.get_radius() == Approx(2.0));
+	a.set_radius(7.0);
+	REQUIRE(a.get_radius() == Approx(7.0));
+}
 
+TEST_CASE("Rectangle Testfaelle", "[rect]"){
+	//User-COnfiguration
+	Rectangle a{};
+	REQUIRE(a.edge.x == Approx(0));
+	REQUIRE(a.edge.y == Approx(0));
+	REQUIRE(a.height == Approx(1));
+	REQUIRE(a.width == Approx(1));
+	//RGB-Farben
+	REQUIRE(a.clr.r == Approx(0));
+	REQUIRE(a.clr.g == Approx(0));
+	REQUIRE(a.clr.b == Approx(0));
+	//Mit Werten
+	Rectangle c{{0,0},3,2.5,{0.3}};
+	REQUIRE(c.edge.x == Approx(0));
+	REQUIRE(c.edge.y == Approx(0));
+	REQUIRE(c.height == Approx(3));
+	REQUIRE(c.width == Approx(2.5));
+	//RGB-Farben
+	REQUIRE(c.clr.r == Approx(0.3));
+	REQUIRE(c.clr.g == Approx(0.3));
+	REQUIRE(c.clr.b == Approx(0.3));
+}
 
+TEST_CASE("Rectangle Get Test", "[GetR]"){
+	//Fall 1
+	Rectangle a{{1.5,2.5},4,3,{0}};
+	REQUIRE(a.get_height() == Approx(4));
+	REQUIRE(a.get_width() == Approx(3));
+	REQUIRE(a.get_area() == Approx(12));
+	REQUIRE(a.get_circumference() == Approx(14));
+	a.set_height(5);
+	a.set_width(7);
+}*/
+/*
+TEST_CASE("test_of_point_in_circle/rectangle", "Is inside?"){
+	Rectangle a{Vec2{0.5,0.5}, 0.5, 0.5, Color{}};
+	Rectangle b{Vec2{0.4,0.4}, -0.3, -0.3, Color{}};
+	Circle c{Vec2{0.5,0.5}, 0.2, Color{0,1,0.3}};
+	REQUIRE(a.is_inside(Vec2{0.6,0.6}) == true);
+	REQUIRE(a.is_inside(Vec2{0.4,0.5}) == false);
+	REQUIRE(b.is_inside(Vec2{0.1,0.3}) == true);
+	REQUIRE(b.is_inside(Vec2{0.6,0.6}) == false);
+	REQUIRE(c.is_inside(Vec2{0.7,0.5}) == true);
+	REQUIRE(c.is_inside(Vec2{0.1,0.1}) == false);
+}
+
+*/
 int main(int argc, char *argv[])
 {
 
