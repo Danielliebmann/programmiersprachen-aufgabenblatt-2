@@ -8,7 +8,7 @@
 class Circle{ //Meine CIRCLE Definition
 public:
 	Circle();
-	Circle(Vec2 ctr, float radius/*, Color clr*/);
+	Circle(Vec2 ctr, float radius, Color clr);
 	
 	//GEOMETRIE
 	float get_diameter() const; //Durchmesser
@@ -22,13 +22,13 @@ public:
 	//AUFGABE 2.9 "Umfang"
 	float get_circumference() const; //Umfang
 
-/*
+
 	//2.10 RGB FARBEN
 	float get_color_r() const;//Rot
 	float get_color_g() const;//Grün
 	float get_color_b() const;//Blau
 	
-	
+	/*
 	//AUFGABE 2.11 "DRAW METHODEN"
 	void draw(Window const& win);
     	void draw(Window const& win, Color const& clr);
@@ -39,9 +39,9 @@ public:
 	//Definitionen
 	Vec2 ctr; 
 	float radius;
-	/* 
+	 
 	Color clr;
-	*/
+	
 };
 
 #endif

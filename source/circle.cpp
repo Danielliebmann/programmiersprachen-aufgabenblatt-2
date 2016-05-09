@@ -7,9 +7,9 @@
 #include "mat2.hpp"
 
 //DEFAULT CONFIG
-Circle::Circle():ctr{},radius{1}/*,clr{}*/{}
+Circle::Circle():ctr{},radius{1},clr{}{}
 //alle Eingabeparameter
-Circle::Circle(Vec2 ctr, float radius/*, Color clr*/):ctr{ctr},radius{radius}/*,clr{clr}*/{}
+Circle::Circle(Vec2 ctr, float radius, Color clr):ctr{ctr},radius{radius},clr{clr}{}
 //Durchmesser
 float Circle::get_diameter() const{
  return radius * 2; //2*
@@ -28,7 +28,7 @@ float Circle::get_radius() const{
 //Ausgabe des Stützvektors
 Vec2 Circle::get_center() const{
  return ctr;}
-/*
+
 //2.10 ALLE RGB FARBWERTE
 float Circle::get_color_r() const{//R
  return clr.r;}
@@ -37,7 +37,7 @@ float Circle::get_color_g() const{//G
 float Circle::get_color_b() const{//B
  return clr.b;
 }
-*/ 
+
 //2.9 Umfang
 float Circle::get_circumference() const{
  return 2 * M_PI * radius; //2*pi = Umfang

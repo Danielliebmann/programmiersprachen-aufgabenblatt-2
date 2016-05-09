@@ -7,11 +7,11 @@ using namespace std;
 
 //DEFAULT CONFIG
 Rectangle::Rectangle():
- edge{},height{1},width{1}/*, clr{}*/{}
+ edge{},height{1},width{1}, clr{}{}
 
 //ALLE benötigten Eingabevariablen
-Rectangle::Rectangle(Vec2 edge, float height, float width/*, Color clr*/):
- edge{edge},height{height},width{width}/*,clr{clr}*/
+Rectangle::Rectangle(Vec2 edge, float height, float width, Color clr):
+ edge{edge},height{height},width{width},clr{clr}
  {
   if (height == 0){
   throw out_of_range("Höhe darf nicht NULL sein!");
@@ -21,7 +21,7 @@ Rectangle::Rectangle(Vec2 edge, float height, float width/*, Color clr*/):
  }
 }
 
-/*
+
 //ALLE RGB Farbwerte
 float Rectangle::get_color_r() const{
  return clr.r;
@@ -32,7 +32,7 @@ float Rectangle::get_color_g() const{
 float Rectangle::get_color_b() const{
  return clr.b;
 }
-*/
+
 //GEOMETRIE:
 //Berechnung des Flaecheninhalts
 float Rectangle::get_area() const{

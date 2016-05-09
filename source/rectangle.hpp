@@ -8,7 +8,7 @@
 class Rectangle{
 public:
 	Rectangle();
-	Rectangle(Vec2 edge, float height, float width);/*, Color clr);*/
+	Rectangle(Vec2 edge, float height, float width, Color clr);
 
 	//Werte für Maße
 	float get_height() const;
@@ -21,12 +21,12 @@ public:
 
         //2.9 UMFANG "Circumference"
 	float get_circumference() const;
-	/*
+	
 	//2.10 RGB FARBEN
 	float get_color_r() const;
 	float get_color_g() const;
 	float get_color_b() const;
-
+	/*
 	//2.11 DRAW Methode
 	void draw(Window const& win);
 	void draw(Window const& win, Color const& clr);
@@ -38,7 +38,7 @@ public:
 	Vec2 edge; //EDGE für Eckpunkt
 	float height; 
 	float width; 
-	/*Color clr;*/ 
+	Color clr;
 };
 
 #endif // RECTANGLE_HPP
