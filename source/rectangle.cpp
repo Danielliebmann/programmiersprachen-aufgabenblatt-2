@@ -61,7 +61,7 @@ float Rectangle::get_width() const{
 Vec2 Rectangle::get_edge() const{
 	return edge;
 }
-/*//RÜCKGABE Umfang
+//RÜCKGABE Umfang
 float Rectangle::get_circumference() const{
 	if (height > 0 && width > 0){
 		return height*2 + width*2;
@@ -75,7 +75,7 @@ float Rectangle::get_circumference() const{
 	else{
 		return height*2 + width*(-2);
 	}
-}*/
+}
 
 //Hoehe verschieben
 float Rectangle::set_height(float new_height){

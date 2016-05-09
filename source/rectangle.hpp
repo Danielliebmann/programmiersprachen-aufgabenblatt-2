@@ -16,6 +16,7 @@ public:
 	float get_area() const;
 	float set_height(float new_height);
 	float set_width(float new_width);
+
 	//VEKTOR get Eckpunkt
 	Vec2 get_edge() const;
 

@@ -321,7 +321,7 @@ TEST_CASE("teste Mat2", "[mat2]")
 	
 }
 //2.8
-TEST_CASE("Circle Testfaelle", "[circle]"){
+TEST_CASE("Circle Testfaelle", "[circle]"){ //Getter Abfragen
 	//User-COnfiguration
 	Circle a{};
 	REQUIRE(a.ctr.x == Approx(0));
@@ -332,28 +332,29 @@ TEST_CASE("Circle Testfaelle", "[circle]"){
 	REQUIRE(a.clr.g == Approx(0));
 	REQUIRE(a.clr.b == Approx(0));
 	//Mit Werten
-	Circle c{{5.0, 4.0}, 1.0, {0.5, 0.4, 0.3}};
-	REQUIRE(c.ctr.x == Approx(5.0));
-	REQUIRE(c.ctr.y == Approx(4.0));
-	REQUIRE(c.radius == Approx(1.0));
+	Circle c{{2.0, 3.0}, 4.0, {0.7, 0.2, 0.1}};//letzte Schleife RGB
+	REQUIRE(c.ctr.x == Approx(2.0));
+	REQUIRE(c.ctr.y == Approx(3.0));
+	REQUIRE(c.radius == Approx(4.0));
 	//RGB-Farben
-	REQUIRE(c.clr.r == Approx(0.5));
-	REQUIRE(c.clr.g == Approx(0.4));
-	REQUIRE(c.clr.b == Approx(0.3));
+	REQUIRE(c.clr.r == Approx(0.7));
+	REQUIRE(c.clr.g == Approx(0.2));
+	REQUIRE(c.clr.b == Approx(0.1));
 }
 
-TEST_CASE("Circle Get Test", "[CircG]"){
+TEST_CASE("Circle Get Test", "[CircG]"){//Mit Formeln für Geometrie arbeiten
 	//Fall 1
-	Circle a{{6.0, 7.0}, 2.0, {0.3, 0.4, 0}};
-	REQUIRE(a.get_diameter() == Approx(4.0));
-	REQUIRE(a.get_area() == Approx(2 * 2 * M_PI));
-	/*REQUIRE(a.get_circumference() == Approx(2 * M_PI * 2));*/
-	REQUIRE(a.get_radius() == Approx(2.0));
-	a.set_radius(7.0);
-	REQUIRE(a.get_radius() == Approx(7.0));
+	Circle a{{3.0, 4.0}, 1.0, {0.5, 0.5, 0.2}};
+	REQUIRE(a.get_radius() == Approx(1.0));
+	REQUIRE(a.get_diameter() == Approx(2.0));
+	REQUIRE(a.get_area() == Approx(3.14159));
+	REQUIRE(a.get_circumference() == Approx(6.28319));
+	REQUIRE(a.get_radius() == Approx(1.0));
+	a.set_radius(1.0);
+
 }
 
-TEST_CASE("Rectangle Testfaelle", "[rect]"){
+TEST_CASE("Rectangle Testfaelle", "[rect]"){//Mit Formeln von Rectangle arbeiten
 	//User-COnfiguration
 	Rectangle a{};
 	REQUIRE(a.edge.x == Approx(0));
@@ -365,26 +366,27 @@ TEST_CASE("Rectangle Testfaelle", "[rect]"){
 	REQUIRE(a.clr.g == Approx(0));
 	REQUIRE(a.clr.b == Approx(0));
 	//Mit Werten
-	Rectangle c{{0,0},3,2.5,{0.3}};
+	Rectangle c{{0,1},1,0.4,{0.6}};//letzte Schleife RGB
 	REQUIRE(c.edge.x == Approx(0));
-	REQUIRE(c.edge.y == Approx(0));
-	REQUIRE(c.height == Approx(3));
-	REQUIRE(c.width == Approx(2.5));
+	REQUIRE(c.edge.y == Approx(1.0));
+	REQUIRE(c.height == Approx(1.0));
+	REQUIRE(c.width == Approx(0.4));
 	//RGB-Farben
-	REQUIRE(c.clr.r == Approx(0.3));
-	REQUIRE(c.clr.g == Approx(0.3));
-	REQUIRE(c.clr.b == Approx(0.3));
+	REQUIRE(c.clr.r == Approx(0.6));
+	REQUIRE(c.clr.g == Approx(0.6));
+	REQUIRE(c.clr.b == Approx(0.6));
 }
 
 TEST_CASE("Rectangle Get Test", "[GetR]"){
 	//Fall 1
-	Rectangle a{{1.5,2.5},4,3,{0}};
-	REQUIRE(a.get_height() == Approx(4));
-	REQUIRE(a.get_width() == Approx(3));
-	REQUIRE(a.get_area() == Approx(12));
-	/*REQUIRE(a.get_circumference() == Approx(14));*/
+	
+	Rectangle a{{0.5,3.7},5,1,{1}};
+	REQUIRE(a.get_height() == Approx(5.0));
+	REQUIRE(a.get_width() == Approx(1.0));
+	REQUIRE(a.get_area() == Approx(5.0));
+	REQUIRE(a.get_circumference() == Approx(12.0));
 	a.set_height(5);
-	a.set_width(7);
+	a.set_width(1);
 }
 /*
 TEST_CASE("test_of_point_in_circle/rectangle", "Is inside?"){

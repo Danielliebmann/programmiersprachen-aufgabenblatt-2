@@ -22,7 +22,6 @@ public:
 	//AUFGABE 2.9 "Umfang"
 	float get_circumference() const; //Umfang
 
-
 	//2.10 RGB FARBEN
 	float get_color_r() const;//Rot
 	float get_color_g() const;//Grün
