@@ -118,29 +118,15 @@ win.draw_line(get_edge().x + get_width(), get_edge().y, get_edge().x + get_width
 //Konstruiere farbiges Rechteck
 void Rectangle::draw(Window const& win, Color const& clr){
 
-win.draw_line(get_edge().x, 
-get_edge().y, 
-get_edge().x + get_width(), 
-get_edge().y, 
-clr.r, clr.g, clr.b);
+win.draw_line(get_edge().x, get_edge().y, get_edge().x + get_width(), get_edge().y, clr.r, clr.g, clr.b);
 
-win.draw_line(get_edge().x, 
-get_edge().y, 
-get_edge().x, 
-get_edge().y + get_height(), 
-clr.r, clr.g, clr.b);
+win.draw_line(get_edge().x, get_edge().y, get_edge().x, get_edge().y + get_height(), clr.r, clr.g, clr.b);
 
-win.draw_line(get_edge().x, 
-get_edge().y + get_height(), 
-get_edge().x + get_width(), 
-get_edge().y + get_height(), 
-clr.r, clr.g, clr.b);
+win.draw_line(get_edge().x, get_edge().y + get_height(), get_edge().x + get_width(), get_edge().y + get_height(), clr.r, clr.g, clr.b);
 
-win.draw_line(get_edge().x + get_width(), 
-get_edge().y, get_edge().x + get_width(), 
-get_edge().y + get_height(), 
-clr.r, clr.g, clr.b);
+win.draw_line(get_edge().x + get_width(), get_edge().y, get_edge().x + get_width(), get_edge().y + get_height(), clr.r, clr.g, clr.b);
 }
+
 bool Rectangle::is_inside(Vec2 const& point){
 	//beide positiv
 	if (get_height() > 0 && get_width() > 0){

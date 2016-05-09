@@ -42,7 +42,7 @@ float Circle::get_circumference() const{
  return 2 * M_PI * radius; //2*pi = Umfang
 }
 
-
+//Der Kreis mit ohne Farbe :3
 void Circle::draw(Window const& win){
  win.draw_point(get_center().x, get_center().y, get_color_r(), get_color_g(), get_color_b());
   for (int i = 1; i<(360+1); ++i){//360Schritte
@@ -51,23 +51,24 @@ void Circle::draw(Window const& win){
      win.draw_line(start.x, start.y, end.x, end.y, get_color_r(), get_color_g(), get_color_b());
     }
 }
-
+//Der Kreis mit ganz toll Farbe
 void Circle::draw(Window const& win, Color const& clr){
  win.draw_point(get_center().x, get_center().y, clr.r, clr.g, clr.b);
   for (int i = 1; i<(360+1); ++i){ //360 Schritte
+	//START
       Vec2 start((make_rotation_mat2(2*M_PI*i/360)) * Vec2(get_radius(),0) + get_center());
+	//ENDE
       Vec2 end((make_rotation_mat2(2*M_PI*(i+1)/360)) * Vec2(get_radius(),0) + get_center());
+	//Operator Linienzeichner der nicht funktioniert
       win.draw_line(start.x, start.y, end.x, end.y, clr.r, clr.g, clr.b);
     }
 }
 //Liegt der Punkt im Kreis 2.13 is inside
 bool Circle::is_inside(Vec2 const& point){
     if(get_radius() >= distance(get_center(),point)){
-    	return true;
-    }
+    	return true;}
     else{
-    	return false;
-    }
+    	return false;}
 }
 
 

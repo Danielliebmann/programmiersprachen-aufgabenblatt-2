@@ -13,13 +13,13 @@ int main(int argc, char* argv[])
 {
   Window win{std::make_pair(600,600)};
 
-  //Rechteck
+ //Rechteck
   std::vector<Rectangle> Rechteck;
-  Rechteck.push_back(Rectangle(Vec2{0.3,0.3}, 0.33, 0.33, Color{1,0,0.5}));
+  Rechteck.push_back(Rectangle(Vec2{0.5,0.5}, 0.49, 0.49, Color{1,0,0.5}));
 
   //Kreis
   std::vector<Circle> Kreis;
-  Kreis.push_back(Circle(Vec2{0.2,0.3}, 0.2, Color{0,2,0.44}));
+  Kreis.push_back(Circle(Vec2{0.3,0.5}, 0.3, Color{0,1,0.3}));
 
 
   while (!win.should_close()) {
