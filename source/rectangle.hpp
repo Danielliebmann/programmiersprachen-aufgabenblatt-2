@@ -4,6 +4,7 @@
 #include <math.h>
 #include "color.hpp"
 #include "window.hpp"
+#include <cmath>
 // Rectangle class definition
 class Rectangle{
 public:
@@ -27,11 +28,11 @@ public:
 	float get_color_r() const;
 	float get_color_g() const;
 	float get_color_b() const;
-	/*
+	
 	//2.11 DRAW Methode
 	void draw(Window const& win);
 	void draw(Window const& win, Color const& clr);
-*/
+
 	//Definitionen
 	Vec2 edge; //EDGE für Eckpunkt
 	float height; 

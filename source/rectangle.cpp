@@ -4,7 +4,7 @@
 #include <math.h>
 #include "color.hpp"
 #include "mat2.hpp"
-#include "window.hpp"
+#include <cmath>
 using namespace std;
 
 //DEFAULT CONFIG
@@ -101,7 +101,7 @@ float Rectangle::set_width(float new_width){
 	 return new_width;
 	}
 }
-/*
+
 //Konstruiere Rechteck
 void Rectangle::draw(Window const& win){
 
@@ -141,5 +141,5 @@ get_edge().y, get_edge().x + get_width(),
 get_edge().y + get_height(), 
 clr.r, clr.g, clr.b);
 }
-*/
+
 

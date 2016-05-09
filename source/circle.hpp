@@ -4,6 +4,7 @@
 #include "vec2.hpp"
 #include "color.hpp"
 #include "window.hpp"
+#include <cmath>
 
 class Circle{ //Meine CIRCLE Definition
 public:

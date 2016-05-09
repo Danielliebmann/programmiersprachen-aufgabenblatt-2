@@ -4,7 +4,7 @@
 #include "circle.hpp"
 #include "color.hpp"
 #include "mat2.hpp"
-
+#include <cmath>
 //DEFAULT CONFIG
 Circle::Circle():ctr{},radius{1},clr{}{}
 //alle Eingabeparameter
@@ -42,10 +42,10 @@ float Circle::get_circumference() const{
  return 2 * M_PI * radius; //2*pi = Umfang
 }
 
-/*
+
 void Circle::draw(Window const& win){
  win.draw_point(get_center().x, get_center().y, get_color_r(), get_color_g(), get_color_b());
-  for (int i = 1; i<(360+1); ++i){
+  for (int i = 1; i<(360+1); ++i){//360Schritte
      Vec2 start((make_rotation_mat2(2*M_PI*i/360)) * Vec2(get_radius(),0) + get_center());
      Vec2 end((make_rotation_mat2(2*M_PI*(i+1)/360)) * Vec2(get_radius(),0) + get_center());
      win.draw_line(start.x, start.y, end.x, end.y, get_color_r(), get_color_g(), get_color_b());
@@ -54,7 +54,7 @@ void Circle::draw(Window const& win){
 
 void Circle::draw(Window const& win, Color const& clr){
  win.draw_point(get_center().x, get_center().y, clr.r, clr.g, clr.b);
-  for (int i = 1; i<(360+1); ++i){
+  for (int i = 1; i<(360+1); ++i){ //360 Schritte
       Vec2 start((make_rotation_mat2(2*M_PI*i/360)) * Vec2(get_radius(),0) + get_center());
       Vec2 end((make_rotation_mat2(2*M_PI*(i+1)/360)) * Vec2(get_radius(),0) + get_center());
       win.draw_line(start.x, start.y, end.x, end.y, clr.r, clr.g, clr.b);

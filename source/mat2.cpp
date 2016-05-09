@@ -1,5 +1,7 @@
 #include "mat2.hpp"
-#include <cmath>
+#include "vec2.hpp"
+#include <iostream>
+#include <math.h>
 
 Mat2::Mat2(){ //EINHEITSMATRIXX
 	this->matrix[0][0] = 1;
@@ -94,6 +96,7 @@ Mat2 make_rotation_mat2(float phi){
 	Mat2 mNew{(float) sin(phi), (float) cos(phi), (float) -sin(phi), (float) cos(phi)};
 	 return mNew;
 }
+
 
 
 
