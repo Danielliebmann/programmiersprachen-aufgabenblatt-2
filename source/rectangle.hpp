@@ -37,6 +37,7 @@ public:
 	Vec2 edge; //EDGE für Eckpunkt
 	float height; 
 	float width; 
+	bool is_inside(Vec2 const& point);	//Überprüfung ob Punkt in Rechteck liegt
 	Color clr;
 };
 

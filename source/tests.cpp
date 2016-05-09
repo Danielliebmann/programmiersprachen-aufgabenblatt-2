@@ -388,6 +388,24 @@ TEST_CASE("Rectangle Get Test", "[GetR]"){
 	a.set_height(5);
 	a.set_width(1);
 }
+TEST_CASE("INSIDE MAN", "[inside]"){
+	Rectangle a{Vec2{0.2,0.3}, 0.4, 0.5, Color{}};
+	Circle b{Vec2{0.5,0.1}, 0.2, Color{0,1,0.4}};
+	Rectangle c{Vec2{0.4,0.6}, -0.3, -0.3, Color{}};
+	Circle d{Vec2{0.7,0.5}, 0.2, Color{0,1,0.3}};
+
+	REQUIRE(a.is_inside(Vec2{0.3,0.6}) == true);
+	REQUIRE(a.is_inside(Vec2{0.5,0.5}) == true);
+	REQUIRE(a.is_inside(Vec2{0.4,0.5}) == true);
+
+	REQUIRE(c.is_inside(Vec2{0.1,0.3}) == true);
+	REQUIRE(c.is_inside(Vec2{0.5,0.2}) == false);
+	REQUIRE(c.is_inside(Vec2{0.6,0.6}) == false);
+
+	REQUIRE(d.is_inside(Vec2{0.4,0.5}) == false);
+	REQUIRE(d.is_inside(Vec2{0.4,0.6}) == false);
+	REQUIRE(d.is_inside(Vec2{0.1,0.1}) == false);
+}
 
 int main(int argc, char *argv[])
 {

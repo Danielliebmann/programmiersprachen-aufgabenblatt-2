@@ -33,6 +33,7 @@ public:
 	void draw(Window const& win);
     	void draw(Window const& win, Color const& clr);
 	
+	bool is_inside(Vec2 const& point);		//Überprüfung ob Punkt in Kreis liegt
 
 	Vec2 ctr; 
 	float radius;

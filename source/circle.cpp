@@ -60,5 +60,14 @@ void Circle::draw(Window const& win, Color const& clr){
       win.draw_line(start.x, start.y, end.x, end.y, clr.r, clr.g, clr.b);
     }
 }
+//Liegt der Punkt im Kreis 2.13 is inside
+bool Circle::is_inside(Vec2 const& point){
+    if(get_radius() >= distance(get_center(),point)){
+    	return true;
+    }
+    else{
+    	return false;
+    }
+}
 
 

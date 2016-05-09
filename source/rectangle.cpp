@@ -141,5 +141,54 @@ get_edge().y, get_edge().x + get_width(),
 get_edge().y + get_height(), 
 clr.r, clr.g, clr.b);
 }
-
+bool Rectangle::is_inside(Vec2 const& point){
+	//beide positiv
+	if (get_height() > 0 && get_width() > 0){
+		if (point.x < get_edge().x || point.x > (get_edge().x + get_width())){
+			return false;
+		}
+		if (point.y < get_edge().y || point.y > (get_edge().y + get_height())){
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+	//positive Höhe & negative Breite
+	if (get_height() > 0 && get_width() < 0){
+		if (point.x < (get_edge().x  + get_width()) || point.x > get_edge().x){
+		return false;
+		}
+		if (point.y < get_edge().y || point.y > (get_edge().y + get_height())){
+		return false;
+		}
+		else{
+		return true;
+		}
+	}
+	//negative Höhe & positive Breite
+	if (get_height() < 0 && get_width() > 0){
+		if (point.x < get_edge().x || point.x > (get_edge().x + get_width())){
+		return false;
+		}
+		if (point.y < (get_edge().y + get_height()) || point.y > get_edge().y){
+		return false;
+		}
+		else{
+		return true;
+		}
+	}
+	//beide negativ
+	else{
+		if (point.x < (get_edge().x + get_width()) || point.x > get_edge().x){
+		return false;
+		}
+		if (point.y < (get_edge().y + get_height()) || point.y > get_edge().y){
+		return false;
+		}
+		else{
+		return true;
+		}
+	}
+}
 
