@@ -3,7 +3,6 @@
 #include "vec2.hpp"
 #include "circle.hpp"
 #include "color.hpp"
-#include "window.hpp"
 #include "mat2.hpp"
 
 //DEFAULT CONFIG
@@ -61,12 +60,5 @@ void Circle::draw(Window const& win, Color const& clr){
       win.draw_line(start.x, start.y, end.x, end.y, clr.r, clr.g, clr.b);
     }
 }
-bool Circle::is_inside(Vec2 const& point){
-    if(get_radius() >= distance(get_center(),point)){
-      return true;}
-    else{
-      return false;
-    }
-}
-*/
+
 

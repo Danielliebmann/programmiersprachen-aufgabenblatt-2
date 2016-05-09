@@ -2,6 +2,7 @@
 #ifndef MAT2_HPP
 #define MAT2_HPP
 #include "vec2.hpp"
+#include <math.h>
 
 class Mat2
 {

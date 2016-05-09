@@ -388,20 +388,7 @@ TEST_CASE("Rectangle Get Test", "[GetR]"){
 	a.set_height(5);
 	a.set_width(1);
 }
-/*
-TEST_CASE("test_of_point_in_circle/rectangle", "Is inside?"){
-	Rectangle a{Vec2{0.5,0.5}, 0.5, 0.5, Color{}};
-	Rectangle b{Vec2{0.4,0.4}, -0.3, -0.3, Color{}};
-	Circle c{Vec2{0.5,0.5}, 0.2, Color{0,1,0.3}};
-	REQUIRE(a.is_inside(Vec2{0.6,0.6}) == true);
-	REQUIRE(a.is_inside(Vec2{0.4,0.5}) == false);
-	REQUIRE(b.is_inside(Vec2{0.1,0.3}) == true);
-	REQUIRE(b.is_inside(Vec2{0.6,0.6}) == false);
-	REQUIRE(c.is_inside(Vec2{0.7,0.5}) == true);
-	REQUIRE(c.is_inside(Vec2{0.1,0.1}) == false);
-}
 
-*/
 int main(int argc, char *argv[])
 {
 

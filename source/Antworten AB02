@@ -1,0 +1,27 @@
+
+2.2 Include Guards:
+- Löst das Problem der mehrfachen Einbindung
+- Dies tritt während des kompilierens auf, wenn mehrmals die gleiche Header-Datei eingebunden wird. (Mehrere Module benutzen die gleich Bibliothek)
+
+Destruktor:
+- trägt selben Namen wie die Klasse
+- keinen Rückgabewert oder Parameter
+- wird aufgerufen wenn die Instanz/ das Objekt einer Klasse zerstört wird.(einer Memberfunktion)
+- wird mit Delete gelöscht
+- tilde
+
+
+2.7 class und struct:
+- Structs sind wie Klassen, nur dass alle in ihnen "public" ist
+- Die Klasse besteht aus Deklaration und implementation (in .cpp) und kapselt zusammengehörige Daten vom Rest des Programms ab
+- public: Aus jeder Codepassage wird der Zugriff erlaubt
+- provate: Die Elemente sind nur aus Codeteilen heraus zugreifbar
+
+2.9 const, Methode und Funktion:
+- const: Variable ist konstant und unveränderbar
+- Funktion: Unterprogramm, welches über Namen aufrufbar (Rückgabetyp oder void), man kann sie überall aufrufen und Dateien an sie übergeben. (Berechnet solange Datentyp stimmt)
+- Methode: Ähnlich wie Funktion, nur ist sie einem Objekt zugeordnet (Stellen alle Operationen zur Verfügung, die nötig sind, um das zugehörige Objekt zu manipulieren)
+
+2.11 Überladen
+- Operator deklariert Funktion, die angibt, welche Bedeutung der Operator bei der Anwendung auf Instanzen einer Klasse hat. Er erhält mehrere Bedeutungen und wird überladen. 
+

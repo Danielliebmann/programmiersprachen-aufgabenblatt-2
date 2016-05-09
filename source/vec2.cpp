@@ -1,4 +1,5 @@
 #include "vec2.hpp"
+#include "math.h"
 
 Vec2& Vec2::operator+=(Vec2 const& v)
 {
@@ -62,4 +63,8 @@ Vec2 operator*(float s, Vec2 const& v)
 {
 	Vec2 nuVector{s * v.x, s * v.y};
 	return nuVector;
+}
+//Distanz von zwei Punkten über deren Vektoren
+float distance(Vec2 const& u, Vec2 const& v){
+	return sqrt((u.x-v.x)*(u.x-v.x) + (u.y-v.y)*(u.y-v.y));
 }

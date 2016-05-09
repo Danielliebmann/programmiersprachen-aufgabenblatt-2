@@ -3,6 +3,8 @@
 #include "vec2.hpp"
 #include <math.h>
 #include "color.hpp"
+#include "mat2.hpp"
+#include "window.hpp"
 using namespace std;
 
 //DEFAULT CONFIG
@@ -99,40 +101,18 @@ float Rectangle::set_width(float new_width){
 	 return new_width;
 	}
 }
-
-/*//Konstruiere Rechteck
+/*
+//Konstruiere Rechteck
 void Rectangle::draw(Window const& win){
 
-win.draw_line(get_edge().x, 
-get_edge().y, 
-get_edge().x + get_width(), 
-get_edge().y, 
-get_color_r(), 
-get_color_g(), 
-get_color_b());
+win.draw_line(get_edge().x, get_edge().y, get_edge().x + get_width(), get_edge().y,
+get_color_r(), get_color_g(), get_color_b());
 
-win.draw_line(get_edge().x, 
-get_edge().y, get_edge().x, 
-get_edge().y + get_height(), 
-get_color_r(), 
-get_color_g(), 
-get_color_b());
+win.draw_line(get_edge().x, get_edge().y, get_edge().x, get_edge().y + get_height(), get_color_r(), get_color_g(), get_color_b());
 
-win.draw_line(get_edge().x, 
-get_edge().y + get_height(), 
-get_edge().x + get_width(), 
-get_edge().y + get_height(), 
-get_color_r(), 
-get_color_g(), 
-get_color_b());
+win.draw_line(get_edge().x, get_edge().y + get_height(), get_edge().x + get_width(), get_edge().y + get_height(), get_color_r(), get_color_g(), get_color_b());
 
-win.draw_line(get_edge().x + get_width(), 
-get_edge().y, 
-get_edge().x + get_width(), 
-get_edge().y + get_height(), 
-get_color_r(), 
-get_color_g(), 
-get_color_b());
+win.draw_line(get_edge().x + get_width(), get_edge().y, get_edge().x + get_width(), get_edge().y + get_height(), get_color_r(), get_color_g(), get_color_b());
 }
 
 //Konstruiere farbiges Rechteck
@@ -162,44 +142,4 @@ get_edge().y + get_height(),
 clr.r, clr.g, clr.b);
 }
 */
-/*
-//TEST CASE
-//Liegt der Punkt auch im Rechteck?
-bool Rectangle::is_inside(Vec2 const& point){
-if (get_height() > 0 && get_width() > 0){
- if (point.x < get_edge().x||point.x > (get_edge().x+get_width())){
-  return false;}
-   if (point.y < get_edge().y||point.y > (get_edge().y+get_height())){
-    return false;}
-     else{
-      return true;}
-}
-if (get_height() > 0 && get_width() < 0){
- if (point.x < (get_edge().x+get_width())||point.x > get_edge().x){
-  return false;}
 
-if (point.y < get_edge().y||point.y > (get_edge().y+get_height())){
- return false;}
-  else{
-   return true;}
-}
-if (get_height() < 0 && get_width() > 0){
- if (point.x < get_edge().x||point.x > (get_edge().x+get_width())){
-  return false;}
-
-if (point.y < (get_edge().y+get_height())||point.y > get_edge().y){
- return false;}
-  else{
-   return true;}
-}
-  else{
-   if (point.x < (get_edge().x+get_width())||point.x > get_edge().x){
-    return false;}
-
-if (point.y < (get_edge().y+get_height())||point.y > get_edge().y){
- return false;}
-  else{
-   return true;}
-   }
-}
-*/

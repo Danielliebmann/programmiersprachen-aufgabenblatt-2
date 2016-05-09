@@ -31,10 +31,7 @@ public:
 	//2.11 DRAW Methode
 	void draw(Window const& win);
 	void draw(Window const& win, Color const& clr);
-
-	//2.13 IS INSIDE
-	bool is_inside(Vec2 const& point);
-	*/
+*/
 	//Definitionen
 	Vec2 edge; //EDGE für Eckpunkt
 	float height; 
@@ -42,4 +39,4 @@ public:
 	Color clr;
 };
 
-#endif // RECTANGLE_HPP
+#endif 

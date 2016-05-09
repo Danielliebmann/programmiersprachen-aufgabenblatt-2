@@ -27,15 +27,12 @@ public:
 	float get_color_g() const;//Grün
 	float get_color_b() const;//Blau
 	
-	/*
+	
 	//AUFGABE 2.11 "DRAW METHODEN"
 	void draw(Window const& win);
     	void draw(Window const& win, Color const& clr);
-    	
-	//AUFGABE 2.13 "IS INSIDE"
-	bool is_inside(Vec2 const& point); 
-	*/
-	//Definitionen
+	
+
 	Vec2 ctr; 
 	float radius;
 	 
